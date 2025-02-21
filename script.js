@@ -48,7 +48,13 @@ function calculateEnergy() {
 }
 
 function calculateIntake(){
+        // estetään lomakkeen uudelleenlataus
+        event.preventDefault();
+        let weekday = document.querySelector("#day").value;
+        let eat = document.querySelector("#eating").value;
+        let cal = document.querySelector("#kcal").value;
 
+        console.log(weekday, eat, cal)
 
     
 }
