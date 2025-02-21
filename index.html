@@ -24,7 +24,7 @@
         <option value="active">Aktiivinen urheilija</option>
         <option value="max">Raskaasti kuntoileva</option>
         </select><br>
-        <button onclick="calculate();">Lähetä</button><br>
+        <button onclick="calculateEnergy();">Lähetä</button><br>
 
     </form>
 
@@ -52,9 +52,11 @@
         <option value="su">Illallinen</option>
         <option value="ev">Iltapala</option>
         <option value="sn">Välipala</option>
+        </select>
         <br>
-        Saadut kalorit:<input type="text" name="weight" id="weight" ><br>
-        
+        Saadut kalorit:<input type="text" name="kcal" id="kcal" >
+        <br>
+        <button onclick="calculateIntake()">Lähetä</button><br>
         
     </form>
 

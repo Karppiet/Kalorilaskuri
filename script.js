@@ -1,4 +1,4 @@
-function calculate() {
+function calculateEnergy() {
   // estetään lomakkeen uudelleenlataus
   event.preventDefault();
 
@@ -45,4 +45,10 @@ function calculate() {
       results.innerHTML = `<h1>${Math.round(2.2 * mresult)} kcal/päivä</h1>`;
     }
   }
+}
+
+function calculateIntake(){
+
+
+    
 }
