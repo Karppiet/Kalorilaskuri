@@ -7,6 +7,9 @@ function calculate() {
     "input[type='radio'][name=sex]:checked"
   ).value;
   let activity = document.querySelector("#activity").value;
+  let results = document.querySelector("#results");
+
+ 
 
   console.log(weight, height, age, sex, activity);
 
@@ -16,29 +19,30 @@ function calculate() {
 
   if (sex == "woman") {
     if (activity == "no") {
-      console.log(1.3 * wresult);
+      results.innerHTML = `<h1>${1.3 * wresult}</h1>`;
     } else if (activity == "some") {
-      console.log(1.5 * wresult);
+        results.innerHTML = `<h1>${1.5 * wresult}</h1>`;
     } else if (activity == "frequent") {
-      console.log(1.7 * wresult);
+        results.innerHTML = `<h1>${1.7 * wresult}</h1>`;
     } else if (activity == "active") {
-      console.log(1.9 * wresult);
+        results.innerHTML = `<h1>${1.9 * wresult}</h1>`;
     } else if (activity == "max") {
-      console.log(2.2 * wresult);
+        results.innerHTML = `<h1>${2.2 * wresult}</h1>`;;
     }
   } else if ((sex = "man")) {
     if (activity == "no") {
-      console.log(1.3 * mresult);
+        results.innerHTML = `<h1>${1.3 * mresult}</h1>`;
     } else if (activity == "some") {
-      console.log(1.5 * mresult);
+        results.innerHTML = `<h1>${1.5 * mresult}</h1>`;
     } else if (activity == "frequent") {
-      console.log(1.7 * mresult);
+        results.innerHTML = `<h1>${1.7 * mresult}</h1>`;
     } else if (activity == "active") {
-      console.log(1.9 * mresult);
+        results.innerHTML = `<h1>${1.9 * mresult}</h1>`;
     } else if (activity == "max") {
-      console.log(2.2 * mresult);
+        results.innerHTML = `<h1>${2.2 * mresult}</h1>`;
     }
   }
+
 
 
 }
