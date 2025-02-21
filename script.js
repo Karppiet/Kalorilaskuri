@@ -18,7 +18,7 @@ function calculateEnergy() {
   let wresult = 655.1 + 9.563 * weight + 1.85 * height - 4.676 * age;
 
   let mresult = 66.5 + 13.75 * weight + 5.003 * height - 6.75 * age;
-  // if else lause joka laskee aktiivisuuskertoimen avulla lopullisen kalorintarpeen sekä sijoitetaan tulos h1 kenttään divissä 
+  // if else lause joka laskee aktiivisuuskertoimen avulla lopullisen kalorintarpeen sekä sijoitetaan tulos h1 kenttään divissä
   // sekä pyöristetään tulos
   if (sex == "woman") {
     if (activity == "no") {
@@ -47,14 +47,21 @@ function calculateEnergy() {
   }
 }
 
-function calculateIntake(){
-        // estetään lomakkeen uudelleenlataus
-        event.preventDefault();
-        let weekday = document.querySelector("#day").value;
-        let eat = document.querySelector("#eating").value;
-        let cal = document.querySelector("#kcal").value;
+function calculateIntake() {
+  // estetään lomakkeen uudelleenlataus
+  event.preventDefault();
+  let weekday = document.querySelector("#day").value;
+  let eat = document.querySelector("#eating").value;
+  let cal = document.querySelector("#kcal").value;
 
-        console.log(weekday, eat, cal)
+  console.log(weekday, eat, cal);
 
-    
+  let dataObject = {"day":weekday, "eating":eat, "calories":cal}
+  localStorage.setItem('dataObject', JSON.stringify(dataObject));
+  let retrievedObject = localStorage.getItem('dataObject');
+
+  dataObject.push({"day":weekday, "eating":eat, "calories":cal})
+
+  console.log('retrievedObject:',JSON.parse(retrievedObject));
+
 }
