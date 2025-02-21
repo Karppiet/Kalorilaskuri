@@ -9,14 +9,23 @@
 
     <form action="">
         Paino: <input type="text" name="weight" id="weight" ><br>
-        Pituus: <input type="text" name="length" id="length"><br>
+        Pituus: <input type="text" name="height" id="height"><br>
         Ikä: <input type="text" name="age" id="age"><br>
         Olen: <br>
         <input type="radio" id="woman" value="woman" name="sex">
         <label for="woman">NAINEN</label><br>
         <input type="radio" id="man" value="man" name="sex">
         <label for="man">MIES</label><br>
+        <label for="activity">Valitse kuinka paljon liikut</label>
+        <select name="activity" id="activity">
+        <option value="no">Ei aktiivinen</option>
+        <option value="some">Satunnaisesti liikkuva</option>
+        <option value="frequent">Säännöllisesti liikkuva</option>
+        <option value="active">Aktiivinen urheilija</option>
+        <option value="max">Raskaasti kuntoileva</option>
+        </select><br>
         <button onclick="calculate();">Lähetä</button><br>
+
     </form>
 
     <div id="results"></div>
