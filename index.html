@@ -7,7 +7,7 @@
 </head>
 <body>
     <h2>Energiantarve</h2>
-    <form action="">
+    <form action="#" name="energyForm" onsubmit="calculateEnergy();">
         Paino: <input type="text" name="weight" id="weight" ><br>
         Pituus: <input type="text" name="height" id="height"><br>
         Ikä: <input type="text" name="age" id="age"><br>
@@ -24,7 +24,8 @@
         <option value="active">Aktiivinen urheilija</option>
         <option value="max">Raskaasti kuntoileva</option>
         </select><br>
-        <button onclick="calculateEnergy();">Lähetä</button><br>
+        <!-- <button onclick="calculateEnergy();">Lähetä</button><br> -->
+         <input type="submit" value="Lähetä">
 
     </form>
 
