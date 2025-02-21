@@ -6,7 +6,7 @@
     <title>Kalorilaskuri</title>
 </head>
 <body>
-
+    <h2>Energiantarve</h2>
     <form action="">
         Paino: <input type="text" name="weight" id="weight" ><br>
         Pituus: <input type="text" name="height" id="height"><br>
@@ -16,7 +16,7 @@
         <label for="woman">NAINEN</label><br>
         <input type="radio" id="man" value="man" name="sex">
         <label for="man">MIES</label><br>
-        <label for="activity">Valitse kuinka paljon liikut</label>
+        <label for="activity">Valitse kuinka paljon liikut:</label>
         <select name="activity" id="activity">
         <option value="no">Ei aktiivinen</option>
         <option value="some">Satunnaisesti liikkuva</option>
@@ -28,7 +28,38 @@
 
     </form>
 
+
     <div id="results"></div>
+
+    <h2>Energiansaanti</h2>
+    <form action="">
+        <label for="day">Valitse viikonpäivä:</label>
+        <select name="day" id="day">
+        <option value="mo">Maanantai</option>
+        <option value="tu">Tiistai</option>
+        <option value="we">Keskiviikko</option>
+        <option value="th">Torstai</option>
+        <option value="fr">Perjantai</option>
+        <option value="sa">Lauantai</option>
+        <option value="su">Sunnuntai</option>
+        </select>
+        <br>
+        <label for="eating">Valitse ateria:</label>
+        <select name="eating" id="eating">
+        <option value="br">Aamiainen</option>
+        <option value="lu">Lounas</option>
+        <option value="di">Päivällinen</option>
+        <option value="su">Illallinen</option>
+        <option value="ev">Iltapala</option>
+        <option value="sn">Välipala</option>
+        <br>
+        Saadut kalorit:<input type="text" name="weight" id="weight" ><br>
+        
+        
+    </form>
+
+
+   
 
     <script src="script.js"></script>
 </body>
