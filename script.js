@@ -56,12 +56,22 @@ function calculateIntake() {
 
   console.log(weekday, eat, cal);
 
-  let dataObject = {"day":weekday, "eating":eat, "calories":cal}
-  localStorage.setItem('dataObject', JSON.stringify(dataObject));
-  let retrievedObject = localStorage.getItem('dataObject');
+  let dataObject = { day: weekday, eating: eat, calories: cal };
+  let storedData = JSON.parse(localStorage.getItem("foodLog")) || [];
 
-  dataObject.push({"day":weekday, "eating":eat, "calories":cal})
+  storedData.push(dataObject);
 
-  console.log('retrievedObject:',JSON.parse(retrievedObject));
+  localStorage.setItem("foodLog", JSON.stringify(storedData));
+  // localStorage.setItem('dataObject', JSON.stringify(dataObject));
+  // let retrievedObject = localStorage.getItem('dataObject');
 
+  // dataObject.push({"day":weekday, "eating":eat, "calories":cal})
+
+  Object.keys(localStorage).forEach(function (key) {
+    console.log(localStorage.getItem(key));
+  });
+
+  console.log(sum);
+
+  console.log("retrievedObject:", JSON.parse(retrievedObject));
 }
