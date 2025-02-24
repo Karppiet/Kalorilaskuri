@@ -9,41 +9,36 @@ function checkForm() {
   let x = true;
 
   if (weight < 200 && weight > 40) {
-    x = true;
+    x = false;
   } else {
     console.log("Painon pitää olla väliltä 40-199kg");
-    x = false;
   }
 
   if (height < 240 && height > 80) {
-    x = true;
-  } else {
-    console.log("Pituus pitää olla välillä 80-240")
     x = false;
+  } else {
+    console.log("Pituus pitää olla välillä 80-240");
   }
 
   if (age < 120 && age > 0) {
-    x = true;
-  } else {
-    console.log("Ikä pitää olla välillä 1-120")
     x = false;
+  } else {
+    console.log("Ikä pitää olla välillä 1-120");
   }
 
   if (sex != null) {
-    x = true;
-  } else {
-    console.log("Sukupuoli pitää olla valittuna")
     x = false;
+  } else {
+    console.log("Sukupuoli pitää olla valittuna");
   }
 
-  if(x = true){
-    calculateEnergy()
-  }
-  else{
-    console.log("täytä oikeat arvot")
-  }
+  console.log(x);
 
-  
+  if (x === true) {
+    calculateEnergy();
+  } else {
+    console.log("täytä oikeat arvot");
+  }
 }
 
 function calculateEnergy() {
