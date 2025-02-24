@@ -68,10 +68,16 @@ function calculateIntake() {
   // dataObject.push({"day":weekday, "eating":eat, "calories":cal})
 
   Object.keys(localStorage).forEach(function (key) {
-    console.log(localStorage.getItem(key));
-  });
+    let key1 = localStorage.getItem(key);
+    console.log(key1);
+  }
+)
+  for(const key in localStorage) {
+    console.log(`${key}: ${localStorage.getItem(key)}`)
+  }
 
-  console.log(sum);
 
-  console.log("retrievedObject:", JSON.parse(retrievedObject));
+
+
+  // console.log("retrievedObject:", JSON.parse(retrievedObject));
 }
