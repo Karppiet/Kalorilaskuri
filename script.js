@@ -1,15 +1,18 @@
 function checkForm() {
   event.preventDefault();
   //haeataan muuttujiin formin arvot
+  
   let weight = document.querySelector("#weight").value;
   let height = document.querySelector("#height").value;
   let age = document.querySelector("#age").value;
   let sex = document.querySelector("input[type='radio'][name=sex]:checked");
+  let weightF = weight = document.querySelector("#weight");
   //alusteaan x
   let x = true;
 
-  if (weight < 40 || weight > 200) {
+  if (weight < 40 || weight > 199) {
     console.log("Painon pitää olla väliltä 40-199kg");
+   // weightF.style.borderColor = "red";
     x = false;
   }
 
