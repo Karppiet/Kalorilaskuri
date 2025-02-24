@@ -1,3 +1,38 @@
+function checkForm() {
+  let weight = document.querySelector("#weight").value;
+  let height = document.querySelector("#height").value;
+  let age = document.querySelector("#age").value;
+  let sex = document.querySelector("input[type='radio'][name=sex]:checked");
+
+  let x = true;
+
+  if (weight < 200 && weight > 0) {
+    x = true;
+  } else {
+    x = false;
+  }
+
+  if (height < 240 && height > 0) {
+    x = true;
+  } else {
+    x = false;
+  }
+
+  if (age < 120 && age > 0) {
+    x = true;
+  } else {
+    x = false;
+  }
+
+  if (sex == true) {
+    x = true;
+  } else {
+    x = false;
+  }
+
+  console.log(x);
+}
+
 function calculateEnergy() {
   // estetään lomakkeen uudelleenlataus
   event.preventDefault();
@@ -58,8 +93,8 @@ function calculateIntake() {
   console.log(weekday, eat, cal);
   // luodaan objekti
   let dataObject = { day: weekday, eating: eat, calories: cal };
-  // laitetaan muuttujaan storedData energyLog JSON objektin haku local storagesta, tai luodaan sellainen 
-  // jos ei sellaista ole, sekä parsetaan 
+  // laitetaan muuttujaan storedData energyLog JSON objektin haku local storagesta, tai luodaan sellainen
+  // jos ei sellaista ole, sekä parsetaan
   // energyLog javascript objektiksi
   let storedData = JSON.parse(localStorage.getItem("energyLog")) || [];
 
@@ -82,22 +117,17 @@ function calculateIntake() {
   storedData.forEach(iterateFunction);
 
   // funktio lisää sum muuttujaan kalorit ja laskee ne yhteen
-  function iterateFunction(value){
+  function iterateFunction(value) {
     sum += parseInt(value.calories);
-    
   }
-  
-  console.log(sum);
 
+  console.log(sum);
 
   //haetaan energyResults div IDn avulla
   let result = document.querySelector("#energyResults");
 
-
   // liitetään sum muuttuja h2 tagin sisällä diviin
-  result.innerHTML = `<h2>${sum} KCAL</h2>`
-
-
+  result.innerHTML = `<h2>${sum} KCAL</h2>`;
 
   // Object.keys(localStorage).forEach(function (key) {
   //   let key1 = localStorage.getItem(key);
