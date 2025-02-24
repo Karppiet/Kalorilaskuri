@@ -1,40 +1,36 @@
 function checkForm() {
   event.preventDefault();
-
+  //haeataan muuttujiin formin arvot
   let weight = document.querySelector("#weight").value;
   let height = document.querySelector("#height").value;
   let age = document.querySelector("#age").value;
   let sex = document.querySelector("input[type='radio'][name=sex]:checked");
-
+  //alusteaan x
   let x = true;
 
-  if (weight < 200 && weight > 40) {
-    x = false;
-  } else {
+  if (weight < 40 || weight > 200) {
     console.log("Painon pitää olla väliltä 40-199kg");
+    x = false;
   }
 
-  if (height < 240 && height > 80) {
+  if (height < 80 || height > 240) {
+    console.log("Pituus pitää olla välillä 80-240cm");
     x = false;
-  } else {
-    console.log("Pituus pitää olla välillä 80-240");
   }
 
-  if (age < 120 && age > 0) {
-    x = false;
-  } else {
+  if (age < 1 || age > 120) {
     console.log("Ikä pitää olla välillä 1-120");
+    x = false;
   }
 
-  if (sex != null) {
-    x = false;
-  } else {
+  if (sex == null) {
     console.log("Sukupuoli pitää olla valittuna");
+    x = false;
   }
 
   console.log(x);
 
-  if (x === true) {
+  if (x == true) {
     calculateEnergy();
   } else {
     console.log("täytä oikeat arvot");
