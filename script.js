@@ -57,27 +57,43 @@ function calculateIntake() {
   console.log(weekday, eat, cal);
 
   let dataObject = { day: weekday, eating: eat, calories: cal };
-  let storedData = JSON.parse(localStorage.getItem("foodLog")) || [];
+  let storedData = JSON.parse(localStorage.getItem("energyLog")) || [];
 
   storedData.push(dataObject);
 
-  localStorage.setItem("foodLog", JSON.stringify(storedData));
+  localStorage.setItem("energyLog", JSON.stringify(storedData));
   // localStorage.setItem('dataObject', JSON.stringify(dataObject));
   // let retrievedObject = localStorage.getItem('dataObject');
 
   // dataObject.push({"day":weekday, "eating":eat, "calories":cal})
 
-  Object.keys(localStorage).forEach(function (key) {
-    let key1 = localStorage.getItem(key);
-    console.log(key1);
+  // console.log(storedData);
+  let sum = 0;
+
+  storedData.forEach(iterateFunction);
+
+
+  function iterateFunction(value){
+    sum += parseInt(value.calories);
+    
   }
-)
-  for(const key in localStorage) {
-    console.log(`${key}: ${localStorage.getItem(key)}`)
-  }
+  
+  console.log(sum);
+
+  let result = document.querySelector("#energyResults");
+
+  result.innerHTML = `<h2>${sum} KCAL</h2>`
 
 
 
+  // Object.keys(localStorage).forEach(function (key) {
+  //   let key1 = localStorage.getItem(key);
+  //   console.log(key1);
+  // });
+
+  // for (const key in localStorage) {
+  //   console.log(`${key}: ${localStorage.getItem(key)}`);
+  // }
 
   // console.log("retrievedObject:", JSON.parse(retrievedObject));
 }
