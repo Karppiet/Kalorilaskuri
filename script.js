@@ -50,17 +50,23 @@ function calculateEnergy() {
 function calculateIntake() {
   // estetään lomakkeen uudelleenlataus
   event.preventDefault();
+  // haetaan arvot
   let weekday = document.querySelector("#day").value;
   let eat = document.querySelector("#eating").value;
   let cal = document.querySelector("#kcal").value;
-
+  // logataan arvoja
   console.log(weekday, eat, cal);
-
+  // luodaan objekti
   let dataObject = { day: weekday, eating: eat, calories: cal };
+  // laitetaan muuttujaan storedData energyLog JSON objektin haku local storagesta, tai luodaan sellainen 
+  // jos ei sellaista ole, sekä parsetaan 
+  // energyLog javascript objektiksi
   let storedData = JSON.parse(localStorage.getItem("energyLog")) || [];
 
+  // liitetään storedDataan listan sisälle dataObjectin sisältö loppuun
   storedData.push(dataObject);
 
+  // asetetaan energyLog nimeksi Json objektille ja muutetaan storedData stringiksi ja laitetaan objekti local storageen
   localStorage.setItem("energyLog", JSON.stringify(storedData));
   // localStorage.setItem('dataObject', JSON.stringify(dataObject));
   // let retrievedObject = localStorage.getItem('dataObject');
@@ -68,11 +74,14 @@ function calculateIntake() {
   // dataObject.push({"day":weekday, "eating":eat, "calories":cal})
 
   // console.log(storedData);
+
+  //alustetaan summa
   let sum = 0;
 
+  //ajetaan jokaiselle storedDatan elementille funktio iterateFunction
   storedData.forEach(iterateFunction);
 
-
+  // funktio lisää sum muuttujaan kalorit ja laskee ne yhteen
   function iterateFunction(value){
     sum += parseInt(value.calories);
     
@@ -80,8 +89,12 @@ function calculateIntake() {
   
   console.log(sum);
 
+
+  //haetaan energyResults div IDn avulla
   let result = document.querySelector("#energyResults");
 
+
+  // liitetään sum muuttuja h2 tagin sisällä diviin
   result.innerHTML = `<h2>${sum} KCAL</h2>`
 
 
