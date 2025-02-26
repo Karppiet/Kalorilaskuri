@@ -101,7 +101,7 @@ function checkForm2() {
   let kcal = document.querySelector("#kcal");
 
   // tsekataan syötetty määärä kaloreita ja muutetaan x falseksi jos luvut eivät täsmää
-  if (kcal.value < 1 || kcal.value > 3000) {
+  if (kcal.value < 1 || kcal.value > 3000 || isNaN(kcal.value) == true) {
     console.log("Kalorit pitää olla väliltä 1-3000");
     kcal.style.borderColor = "red";
     x = false;
