@@ -4,20 +4,25 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Kalorilaskuri</title>
-    <style src="style.css"></style>
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <h2>Energiantarve</h2>
-    <form action="#" name="energyForm" onsubmit="checkForm();">
-      Paino: <input type="text" name="weight" id="weight" /> kg<br /> <br />
-      Pituus: <input type="text" name="height" id="height" /> cm<br /><br />
-      Ikä: <input type="text" name="age" id="age" /> vuotta<br /> <br />
+    
+    <form action="#" name="energyForm" onsubmit="checkForm();" class="form">
+      <h2>Energiantarve</h2>
+      Paino: <br /><input type="text" name="weight" id="weight" /> kg<br />
+      <br />
+      Pituus: <br /><input type="text" name="height" id="height" />
+      cm<br /><br />
+      Ikä: <br /><input type="text" name="age" id="age" /> vuotta<br />
+      <br />
       Olen: <br />
       <input type="radio" id="woman" value="woman" name="sex" />
       <label for="woman">Nainen</label><br />
       <input type="radio" id="man" value="man" name="sex" />
-      <label for="man">Mies</label><br /> <br />
-      <label for="activity">Valitse kuinka paljon liikut:</label>
+      <label for="man">Mies</label><br />
+      <br />
+      <label for="activity">Valitse kuinka paljon liikut:</label><br />
       <select name="activity" id="activity">
         <option value="no">Ei aktiivinen</option>
         <option value="some">Satunnaisesti liikkuva</option>
@@ -26,14 +31,16 @@
         <option value="max">Raskaasti kuntoileva</option></select
       ><br />
       <!-- <button onclick="calculateEnergy();">Lähetä</button><br> -->
+      <br />
       <input type="submit" value="Lähetä" />
     </form>
 
     <div id="results"></div>
 
-    <h2>Energiansaanti</h2>
-    <form action="#" name="energyForm2" onsubmit="checkForm2();">
-      <label for="day">Valitse viikonpäivä:</label>
+    
+    <form action="#" name="energyForm2" onsubmit="checkForm2();" class="form">
+      <h2>Energiasaanti</h2>
+      <label for="day">Valitse viikonpäivä:</label><br />
       <select name="day" id="day">
         <option value="mo">Maanantai</option>
         <option value="tu">Tiistai</option>
@@ -43,8 +50,8 @@
         <option value="sa">Lauantai</option>
         <option value="su">Sunnuntai</option>
       </select>
-      <br />
-      <label for="eating">Valitse ateria:</label>
+      <br /><br />
+      <label for="eating">Valitse ateria:</label><br />
       <select name="eating" id="eating">
         <option value="br">Aamiainen</option>
         <option value="lu">Lounas</option>
@@ -54,8 +61,9 @@
         <option value="sn">Välipala</option>
       </select>
       <br />
-      Saadut kalorit:<input type="text" name="kcal" id="kcal" /> kcal
       <br />
+      Saadut kalorit: <br /><input type="text" name="kcal" id="kcal" /> kcal
+      <br /><br />
       <input type="submit" value="Lähetä" />
       <!-- <button onclick="calculateIntake()">Lähetä</button><br /> -->
     </form>
