@@ -1,28 +1,30 @@
 function checkForm() {
   event.preventDefault();
   //haeataan muuttujiin formin arvot
-  
-  let weight = document.querySelector("#weight").value;
-  let height = document.querySelector("#height").value;
-  let age = document.querySelector("#age").value;
+
+  let weight = document.querySelector("#weight");
+  let height = document.querySelector("#height");
+  let age = document.querySelector("#age");
   let sex = document.querySelector("input[type='radio'][name=sex]:checked");
-  let weightF = weight = document.querySelector("#weight");
+
   //alusteaan x
   let x = true;
 
-  if (weight < 40 || weight > 199) {
+  if (weight.value < 40 || weight.value > 199 || isNaN(weight.value) == true)  {
     console.log("Painon pitää olla väliltä 40-199kg");
-   // weightF.style.borderColor = "red";
+    weight.style.borderColor = "red";
     x = false;
   }
 
-  if (height < 80 || height > 240) {
+  if (height.value < 80 || height.value > 240 || isNaN(height.value) == true) {
     console.log("Pituus pitää olla välillä 80-240cm");
+    height.style.borderColor = "red";
     x = false;
   }
 
-  if (age < 1 || age > 120) {
+  if (age.value < 1 || age.value > 120 || isNaN(age.value) == true) {
     console.log("Ikä pitää olla välillä 1-120");
+    age.style.borderColor = "red";
     x = false;
   }
 
@@ -56,6 +58,7 @@ function calculateEnergy() {
   let results = document.querySelector("#results");
   // console logits debuggausta varten
   console.log(weight, height, age, sex, activity);
+
   // sijoitetaan muuttujaan laskukaava jolla selvitetään kalorintarve naisten sekä miesten osalta
   let wresult = 655.1 + 9.563 * weight + 1.85 * height - 4.676 * age;
 
@@ -86,6 +89,29 @@ function calculateEnergy() {
     } else if (activity == "max") {
       results.innerHTML = `<h1>${Math.round(2.2 * mresult)} kcal/päivä</h1>`;
     }
+  }
+}
+
+function checkForm2() {
+  // estetään lomakkeen uudelleenlataus
+  event.preventDefault();
+  // alustetaan x
+  let x = true;
+  // asetetaan muuttujaan oikea kenttä
+  let kcal = document.querySelector("#kcal");
+
+  // tsekataan syötetty määärä kaloreita ja muutetaan x falseksi jos luvut eivät täsmää
+  if (kcal.value < 1 || kcal.value > 3000) {
+    console.log("Kalorit pitää olla väliltä 1-3000");
+    kcal.style.borderColor = "red";
+    x = false;
+  }
+
+  // jos x jää true arvolle ajetaan calculateIntake funktio
+  if (x == true) {
+    calculateIntake();
+  } else {
+    console.log("täytä oikeat arvot");
   }
 }
 
