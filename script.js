@@ -1,6 +1,6 @@
 function checkForm() {
   event.preventDefault();
-  //haeataan muuttujiin formin arvot
+  //haetaan muuttujiin formin arvot
 
   let weight = document.querySelector("#weight");
   let height = document.querySelector("#height");
