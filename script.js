@@ -10,7 +10,7 @@ function checkForm() {
   //alusteaan x
   let x = true;
 
-  if (weight.value < 40 || weight.value > 199 || isNaN(weight.value) == true)  {
+  if (weight.value < 40 || weight.value > 199 || isNaN(weight.value) == true) {
     console.log("Painon pitää olla väliltä 40-199kg");
     weight.style.borderColor = "red";
     x = false;
@@ -137,10 +137,24 @@ function calculateIntake() {
   // asetetaan energyLog nimeksi Json objektille ja muutetaan storedData stringiksi ja laitetaan objekti local storageen
   localStorage.setItem("energyLog", JSON.stringify(storedData));
 
+  let tablearea = document.querySelector("#tablearea");
+  let table = document.createElement("table");
 
-  for (let i = 0; i < storedData.length; i++){
-    console.log(storedData[1].day)
+  if (storedData !== null) {
+    for (let i = 0; i < storedData.length; i++) {
+      let tr = document.createElement("tr");
 
+      let td = document.createElement("td");
+      td.textContent = storedData[i].day;
+      tr.appendChild(td);
+      
+      table.appendChild(tr);
+    }
+    tablearea.appendChild(table);
+  }
+
+  for (let i = 0; i < storedData.length; i++) {
+    console.log(storedData[i].day);
   }
 
   //alustetaan summa
@@ -161,8 +175,4 @@ function calculateIntake() {
 
   // liitetään sum muuttuja h2 tagin sisällä diviin
   result.innerHTML = `<h2>${sum} KCAL</h2>`;
-
-
-
-  
 }
