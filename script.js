@@ -136,12 +136,12 @@ function calculateIntake() {
 
   // asetetaan energyLog nimeksi Json objektille ja muutetaan storedData stringiksi ja laitetaan objekti local storageen
   localStorage.setItem("energyLog", JSON.stringify(storedData));
-  // localStorage.setItem('dataObject', JSON.stringify(dataObject));
-  // let retrievedObject = localStorage.getItem('dataObject');
 
-  // dataObject.push({"day":weekday, "eating":eat, "calories":cal})
 
-  // console.log(storedData);
+  for (let i = 0; i < storedData.length; i++){
+    console.log(storedData[1].day)
+
+  }
 
   //alustetaan summa
   let sum = 0;
@@ -162,14 +162,7 @@ function calculateIntake() {
   // liitetään sum muuttuja h2 tagin sisällä diviin
   result.innerHTML = `<h2>${sum} KCAL</h2>`;
 
-  // Object.keys(localStorage).forEach(function (key) {
-  //   let key1 = localStorage.getItem(key);
-  //   console.log(key1);
-  // });
 
-  // for (const key in localStorage) {
-  //   console.log(`${key}: ${localStorage.getItem(key)}`);
-  // }
 
-  // console.log("retrievedObject:", JSON.parse(retrievedObject));
+  
 }
