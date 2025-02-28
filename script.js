@@ -10,6 +10,7 @@ function checkForm() {
   let wErr = document.querySelector("#weightErr");
   let hErr = document.querySelector("#heightErr");
   let aErr = document.querySelector("#ageErr");
+ 
 
   //alusteaan x
   let x = true;
@@ -54,11 +55,13 @@ function checkForm() {
     weight.style.borderColor = "";
     height.style.borderColor = "";
     age.style.borderColor = "";
+    cal.style.borderColor = "";
     
   } else {
     console.log("täytä oikeat arvot");
   }
 }
+
 
 function calculateEnergy() {
   // estetään lomakkeen uudelleenlataus
@@ -117,17 +120,22 @@ function checkForm2() {
   let x = true;
   // asetetaan muuttujaan oikea kenttä
   let kcal = document.querySelector("#kcal");
+  let cErr = document.querySelector("#calErr");
 
   // tsekataan syötetty määärä kaloreita ja muutetaan x falseksi jos luvut eivät täsmää
   if (kcal.value < 1 || kcal.value > 3000 || isNaN(kcal.value) == true) {
     console.log("Kalorit pitää olla väliltä 1-3000");
     kcal.style.borderColor = "red";
+    cErr.innerHTML =`<p style="color:red">Kalorit pitää olla väliltä 1-3000 kcal</p>`
     x = false;
   }
 
   // jos x jää true arvolle ajetaan calculateIntake funktio
   if (x == true) {
     calculateIntake();
+    kcal.style.borderColor = "";
+    cErr.innerHTML = "";
+
   } else {
     console.log("täytä oikeat arvot");
   }
