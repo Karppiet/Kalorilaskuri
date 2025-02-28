@@ -139,28 +139,44 @@ function calculateIntake() {
 
   let tablearea = document.querySelector("#tablearea");
   let table = document.createElement("table");
+  let thead = document.createElement("thead");
+  let tbody = document.createElement("tbody")
 
   if (storedData !== null) {
+     let headerRow = document.createElement("tr");
+     let headers = ["Päivä", "Ateria", "Kalorit"];
+
+      headers.forEach(headerText => {
+        let th = document.createElement("th");
+        th.textContent = headerText;
+        headerRow.appendChild(th);
+    });
+
+    thead.appendChild(headerRow);
+
     for (let i = 0; i < storedData.length; i++) {
       let tr = document.createElement("tr");
 
       let td = document.createElement("td");
       td.textContent = storedData[i].day;
 
-      let td2 = document.createElement("td"); 
-      td2.textContent = storedData[i].eating;
+      let tdEating = document.createElement("td"); 
+      tdEating.textContent = storedData[i].eating;
 
-      let td3  = document.createElement("td");
-      td3.textContent = storedData[i].calories;
+      let tdCal  = document.createElement("td");
+      tdCal.textContent = storedData[i].calories;
 
       tr.appendChild(td);
-      tr.appendChild(td2);
-      tr.appendChild(td3);
-
-      table.appendChild(tr);
+      tr.appendChild(tdEating);
+      tr.appendChild(tdCal);
+      tbody.appendChild(tr);
 
     }
+
+    table.appendChild(thead);
+    table.appendChild(tbody);
     tablearea.innerHTML = "";
+
     tablearea.appendChild(table);
   }
 
@@ -185,5 +201,5 @@ function calculateIntake() {
   let result = document.querySelector("#energyResults");
 
   // liitetään sum muuttuja h2 tagin sisällä diviin
-  result.innerHTML = `<h2>${sum} KCAL</h2>`;
+  result.innerHTML = `<h2>Yhteensä: ${sum} KCAL</h2>`;
 }
