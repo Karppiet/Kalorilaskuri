@@ -9,7 +9,7 @@ function checkForm() {
 
   //alusteaan x
   let x = true;
-
+  
   if (weight.value < 40 || weight.value > 199 || isNaN(weight.value) == true) {
     console.log("Painon pitää olla väliltä 40-199kg");
     weight.style.borderColor = "red";
@@ -137,46 +137,50 @@ function calculateIntake() {
   // asetetaan energyLog nimeksi Json objektille ja muutetaan storedData stringiksi ja laitetaan objekti local storageen
   localStorage.setItem("energyLog", JSON.stringify(storedData));
 
-  let tablearea = document.querySelector("#tablearea");
-  let table = document.createElement("table");
-  let thead = document.createElement("thead");
-  let tbody = document.createElement("tbody")
-
+  // Katsotaan että storedData ei ole tyhjä
   if (storedData !== null) {
-     let headerRow = document.createElement("tr");
-     let headers = ["Päivä", "Ateria", "Kalorit"];
-
-      headers.forEach(headerText => {
-        let th = document.createElement("th");
-        th.textContent = headerText;
-        headerRow.appendChild(th);
+    // valitaan tablearea sekä loudaan taulukko ja sen osat
+    let tablearea = document.querySelector("#tablearea");
+    let table = document.createElement("table");
+    let thead = document.createElement("thead");
+    let tbody = document.createElement("tbody");
+    //luodaan taulukon otsikot arrayhin
+    let headerRow = document.createElement("tr");
+    let headers = ["Päivä", "Ateria", "Kalorit"];
+    // ajetaan jokaiselle headersin funktio joka luo otsikkotason rivit 
+    headers.forEach((headerText) => {
+      let th = document.createElement("th");
+      th.textContent = headerText;
+      headerRow.appendChild(th);
     });
-
+    // sijoittaa lapsielementin headerRow
     thead.appendChild(headerRow);
 
+    // loopin avulla luodaan body tason rivit
     for (let i = 0; i < storedData.length; i++) {
       let tr = document.createElement("tr");
 
       let td = document.createElement("td");
       td.textContent = storedData[i].day;
 
-      let tdEating = document.createElement("td"); 
+      let tdEating = document.createElement("td");
       tdEating.textContent = storedData[i].eating;
 
-      let tdCal  = document.createElement("td");
+      let tdCal = document.createElement("td");
       tdCal.textContent = storedData[i].calories;
 
+      //liitetään rivit lapsielementteinä riviin
       tr.appendChild(td);
       tr.appendChild(tdEating);
       tr.appendChild(tdCal);
       tbody.appendChild(tr);
-
     }
-
+    // liitetää headi ja body taulukkoon lapsielementtinä
     table.appendChild(thead);
     table.appendChild(tbody);
+    //tyhjätään taulukku duplikaattien muodostumisen varalle
     tablearea.innerHTML = "";
-
+    // liitetään taulukko taulukko tablearea
     tablearea.appendChild(table);
   }
 
