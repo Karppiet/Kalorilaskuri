@@ -11,10 +11,13 @@
     <form action="#" name="energyForm" onsubmit="checkForm();" class="form">
       <h2>Energiantarve</h2>
       Paino: <br /><input type="text" name="weight" id="weight" /> kg<br />
+      <span id="weightErr"></span>
       <br />
       Pituus: <br /><input type="text" name="height" id="height" />
-      cm<br /><br />
+      cm<br />
+      <span id="heightErr"></span> <br />
       Ikä: <br /><input type="text" name="age" id="age" /> vuotta<br />
+      <span id="ageErr"></span>
       <br />
       Olen: <br />
       <input type="radio" id="woman" value="woman" name="sex" />
