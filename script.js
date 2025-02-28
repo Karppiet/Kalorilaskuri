@@ -146,9 +146,19 @@ function calculateIntake() {
 
       let td = document.createElement("td");
       td.textContent = storedData[i].day;
+
+      let td2 = document.createElement("td"); 
+      td2.textContent = storedData[i].eating;
+
+      let td3  = document.createElement("td");
+      td3.textContent = storedData[i].calories;
+
       tr.appendChild(td);
-      
+      tr.appendChild(td2);
+      tr.appendChild(td3);
+
       table.appendChild(tr);
+
     }
     tablearea.appendChild(table);
   }
