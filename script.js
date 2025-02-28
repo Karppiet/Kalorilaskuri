@@ -160,6 +160,7 @@ function calculateIntake() {
       table.appendChild(tr);
 
     }
+    tablearea.innerHTML = "";
     tablearea.appendChild(table);
   }
 
