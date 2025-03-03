@@ -34,7 +34,7 @@ function checkForm() {
   if (age.value < 1 || age.value > 120 || isNaN(age.value) == true) {
     console.log("Ikä pitää olla välillä 1-120");
     age.style.borderColor = "red";
-    aErr.innerHTML = `<p style="color:red">kä pitää olla välillä 1-120 vuotta</p>`
+    aErr.innerHTML = `<p style="color:red">Ikä pitää olla välillä 1-120 vuotta</p>`
 
     x = false;
   }

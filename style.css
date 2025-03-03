@@ -16,3 +16,15 @@ input[type="radio"] {
     margin-right: 5px; 
 } 
 
+.btn:hover,
+.btn:focus {
+  background: #272eb5
+}
+
+.btn {
+    margin-top: 1rem;
+    background: #3740ff;
+    color: #fff;
+    border: none;
+    padding: 0.6rem;
+  }
