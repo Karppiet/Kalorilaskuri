@@ -26,7 +26,7 @@ function checkForm() {
   if (height.value < 80 || height.value > 240 || isNaN(height.value) == true) {
     console.log("Pituus pitää olla välillä 80-240cm");
     height.style.borderColor = "red";
-    hErr.innerHTML = `<p style="color:red">Pituus pitää olla välillä 80-240cm</p>`
+    hErr.innerHTML = `<p style="color:red">Pituus pitää olla väliltä 80-240cm</p>`
 
     x = false;
   }
@@ -34,7 +34,7 @@ function checkForm() {
   if (age.value < 1 || age.value > 120 || isNaN(age.value) == true) {
     console.log("Ikä pitää olla välillä 1-120");
     age.style.borderColor = "red";
-    aErr.innerHTML = `<p style="color:red">Ikä pitää olla välillä 1-120 vuotta</p>`
+    aErr.innerHTML = `<p style="color:red">Ikä pitää olla väliltä 1-120 vuotta</p>`
 
     x = false;
   }
