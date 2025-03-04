@@ -15,6 +15,7 @@ function checkForm() {
   //alusteaan x
   let x = true;
   
+  // tsekataan kenttien arvot, jos eivät sovi annettuihin vaatimuksiin annetaan virheilmoitus
   if (weight.value < 40 || weight.value > 199 || isNaN(weight.value) == true) {
     console.log("Painon pitää olla väliltä 40-199kg");
     weight.style.borderColor = "red";
@@ -46,6 +47,7 @@ function checkForm() {
 
   console.log(x);
 
+  //jos virheitä ei tule ajetaan calculateEnergy() ja tyhjennetään virheilmoitukset
   if (x == true) {
     calculateEnergy();
     wErr.innerHTML = "";
@@ -84,31 +86,31 @@ function calculateEnergy() {
   let wresult = 655.1 + 9.563 * weight + 1.85 * height - 4.676 * age;
 
   let mresult = 66.5 + 13.75 * weight + 5.003 * height - 6.75 * age;
-  // if else lause joka laskee aktiivisuuskertoimen avulla lopullisen kalorintarpeen sekä sijoitetaan tulos h1 kenttään divissä
+  // if else lause joka laskee aktiivisuuskertoimen avulla lopullisen kalorintarpeen sekä sijoitetaan tulos h2 kenttään divissä
   // sekä pyöristetään tulos
   if (sex == "woman") {
     if (activity == "no") {
-      results.innerHTML = `<h1>${Math.round(1.3 * wresult)} kcal/päivä</h1>`;
+      results.innerHTML = `<h2>${Math.round(1.3 * wresult)} kcal/päivä</h2>`;
     } else if (activity == "some") {
-      results.innerHTML = `<h1>${Math.round(1.5 * wresult)} kcal/päivä</h1>`;
+      results.innerHTML = `<h2>${Math.round(1.5 * wresult)} kcal/päivä</h2>`;
     } else if (activity == "frequent") {
-      results.innerHTML = `<h1>${Math.round(1.7 * wresult)} kcal/päivä</h1>`;
+      results.innerHTML = `<h2>${Math.round(1.7 * wresult)} kcal/päivä</h2>`;
     } else if (activity == "active") {
-      results.innerHTML = `<h1>${Math.round(1.9 * wresult)} kcal/päivä</h1>`;
+      results.innerHTML = `<h2>${Math.round(1.9 * wresult)} kcal/päivä</h2>`;
     } else if (activity == "max") {
-      results.innerHTML = `<h1>${Math.round(2.2 * wresult)} kcal/päivä</h1>`;
+      results.innerHTML = `<h2>${Math.round(2.2 * wresult)} kcal/päivä</h2>`;
     }
   } else if ((sex = "man")) {
     if (activity == "no") {
-      results.innerHTML = `<h1>${Math.round(1.3 * mresult)} kcal/päivä</h1>`;
+      results.innerHTML = `<h2>${Math.round(1.3 * mresult)} kcal/päivä</h2>`;
     } else if (activity == "some") {
-      results.innerHTML = `<h1>${Math.round(1.5 * mresult)} kcal/päivä</h1>`;
+      results.innerHTML = `<h2>${Math.round(1.5 * mresult)} kcal/päivä</h2>`;
     } else if (activity == "frequent") {
-      results.innerHTML = `<h1>${Math.round(1.7 * mresult)} kcal/päivä</h1>`;
+      results.innerHTML = `<h2>${Math.round(1.7 * mresult)} kcal/päivä</h2>`;
     } else if (activity == "active") {
-      results.innerHTML = `<h1>${Math.round(1.9 * mresult)} kcal/päivä</h1>`;
+      results.innerHTML = `<h2>${Math.round(1.9 * mresult)} kcal/päivä</h2>`;
     } else if (activity == "max") {
-      results.innerHTML = `<h1>${Math.round(2.2 * mresult)} kcal/päivä</h1>`;
+      results.innerHTML = `<h2>${Math.round(2.2 * mresult)} kcal/päivä</h2>`;
     }
   }
 }
@@ -130,7 +132,7 @@ function checkForm2() {
     x = false;
   }
 
-  // jos x jää true arvolle ajetaan calculateIntake funktio
+  // jos x jää true arvolle ajetaan calculateIntake funktio sekä tyhjennetään virheilmoitukset
   if (x == true) {
     calculateIntake();
     kcal.style.borderColor = "";
