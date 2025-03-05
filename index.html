@@ -4,80 +4,169 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Kalorilaskuri</title>
-    <link rel="stylesheet" href="style.css" />
-    
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="stylet.css" />
   </head>
   <body>
+    <div class="form-body">
+      <div class="row">
+        <div class="form-holder">
+          <div class="form-content">
+            <div class="form-items">
+              <h3>Energiantarve</h3>
+              <!-- <p>Fill in the data below.</p> -->
+              <form action="#" name="energyForm" onsubmit="checkForm();">
+                <div class="col-md-12">
+                  <input
+                    class="form-control"
+                    type="text"
+                    name="weight"
+                    placeholder="Paino"
+                    id="weight"
+                  />
+                  <span id="weightErr"></span>
+                </div>
 
+                <div class="col-md-12">
+                  <input
+                    class="form-control"
+                    type="text"
+                    name="height"
+                    id="height"
+                    placeholder="Pituus"
+                  />
+                  <span id="heightErr"></span>
+                </div>
 
-    <form action="#" name="energyForm" onsubmit="checkForm();" class="form">
-      <h2>Energiantarve</h2>
-      Paino: <br /><input type="text" name="weight" id="weight" /> kg<br />
-      <span id="weightErr"></span>
-      <br />
-      Pituus: <br /><input type="text" name="height" id="height" /> cm<br />
-      <span id="heightErr"></span> <br />
-      Ikä: <br /><input type="text" name="age" id="age" /> vuotta<br />
-      <span id="ageErr"></span>
-      <br />
-      Olen: <br />
-      <input type="radio" id="woman" value="woman" name="sex" />
-      <label for="woman">Nainen</label><br />
-      <input type="radio" id="man" value="man" name="sex" />
-      <label for="man">Mies</label><br />
-      <br />
-      <label for="activity">Valitse kuinka paljon liikut:</label><br />
-      <br />
-      <select name="activity" id="activity">
-        <option value="no">Ei aktiivinen</option>
-        <option value="some">Satunnaisesti liikkuva</option>
-        <option value="frequent">Säännöllisesti liikkuva</option>
-        <option value="active">Aktiivinen urheilija</option>
-        <option value="max">Raskaasti kuntoileva</option></select
-      ><br />
-      <!-- <button onclick="calculateEnergy();">Lähetä</button><br> -->
-      <br />
-      <input type="submit" value="Lähetä" class="btn" />
-    </form>
+                <div class="col-md-12">
+                  <input
+                    class="form-control"
+                    type="text"
+                    name="aget"
+                    id="age"
+                    placeholder="Ikä"
+                  />
+                  <span id="ageErr"></span>
+                </div>
 
-    <div id="results"></div>
+                <div class="col-md-12">
+                  <select
+                    class="form-select mt-3"
+                    id="activity"
+                    name="activity"
+                  >
+                    <option selected disabled value="">Aktiivisuus</option>
+                    <option value="no">Ei aktiivinen</option>
+                    <option value="some">Satunnaisesti liikkuva</option>
+                    <option value="frequent">Säännöllisesti liikkuva</option>
+                    <option value="active">Aktiivinen urheilija</option>
+                    <option value="max">Raskaasti kuntoileva</option>
+                  </select>
+                </div>
 
-    <form action="#" name="energyForm2" onsubmit="checkForm2();" class="form">
-      <h2>Energiasaanti</h2>
-      <label for="day">Valitse viikonpäivä:</label><br />
-      <select name="day" id="day">
-        <option value="mo">Maanantai</option>
-        <option value="tu">Tiistai</option>
-        <option value="we">Keskiviikko</option>
-        <option value="th">Torstai</option>
-        <option value="fr">Perjantai</option>
-        <option value="sa">Lauantai</option>
-        <option value="su">Sunnuntai</option>
-      </select>
-      <br /><br />
-      <label for="eating">Valitse ateria:</label><br />
-      <select name="eating" id="eating">
-        <option value="br">Aamiainen</option>
-        <option value="lu">Lounas</option>
-        <option value="di">Päivällinen</option>
-        <option value="su">Illallinen</option>
-        <option value="ev">Iltapala</option>
-        <option value="sn">Välipala</option>
-      </select>
-      <br />
-      <br />
-      Saadut kalorit: <br /><input type="text" name="kcal" id="kcal" /> kcal
-      <br /><span id="calErr"></span><br />
-      <input type="submit" value="Lähetä" class="btn" />
-      <!-- <button onclick="calculateIntake()">Lähetä</button><br /> -->
-    </form>
+                <div class="col-md-12 mt-3">
+                  <label class="mb-3 mr-1" for="sex">Sukupuoli </label>
 
-    <div id="tablearea"></div>
+                  <input
+                    type="radio"
+                    class="btn-check"
+                    name="sex"
+                    id="man"
+                    autocomplete="off"
+                  />
+                  <label class="btn btn-sm btn-outline-secondary" for="man"
+                    >Mies</label
+                  >
 
-    <div id="energyResults"></div>
+                  <input
+                    type="radio"
+                    class="btn-check"
+                    name="sex"
+                    id="woman"
+                    autocomplete="off"
+                  />
+                  <label class="btn btn-sm btn-outline-secondary" for="woman"
+                    >Nainen</label
+                  >
 
+                  <input
+                    type="radio"
+                    class="btn-check"
+                    name="gender"
+                    id="secret"
+                    autocomplete="off"
+                  />
+                </div>
+
+                <div class="form-button mt-3">
+                  <button id="submit" type="submit" class="btn btn-primary">
+                    Lähetä
+                  </button>
+                </div>
+                <br />
+                <div id="results"></div>
+              </form>
+              <br />
+
+              <form action="#" name="energyForm2" onsubmit="checkForm2();">
+                <h3>Energiansaanti</h3>
+                <div class="col-md-12">
+                  <div class="col-md-12">
+                    <select class="form-select mt-3" id="day" name="day">
+                      <option selected disabled value="">Päivä</option>
+                      <option value="mo">Maanantai</option>
+                      <option value="tu">Tiistai</option>
+                      <option value="we">Keskiviikko</option>
+                      <option value="th">Torstai</option>
+                      <option value="fr">Perjantai</option>
+                      <option value="sa">Lauantai</option>
+                      <option value="su">Sunnuntai</option>
+                    </select>
+                    <span id="weightErr"></span>
+                  </div>
+
+                  <div class="col-md-12">
+                    <select class="form-select mt-3" id="eating" name="eating">
+                      <option selected disabled value="">Ateria</option>
+                      <option value="br">Aamiainen</option>
+                      <option value="lu">Lounas</option>
+                      <option value="di">Päivällinen</option>
+                      <option value="su">Illallinen</option>
+                      <option value="ev">Iltapala</option>
+                      <option value="sn">Välipala</option>
+                    </select>
+                  </div>
+
+                  <input
+                    class="form-control"
+                    type="text"
+                    name="kcal"
+                    placeholder="Kalorit"
+                    id="kcal"
+                  />
+                  <br /><span id="calErr"></span><br />
+                </div>
+
+                <div class="form-button mt-3">
+                  <button id="submit" type="submit" class="btn btn-primary">
+                    Lähetä
+                  </button>
+                </div>
+                <br />
+                <div id="tablearea"></div>
+
+                <div id="energyResults"></div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-
     <script src="script.js"></script>
   </body>
 </html>
