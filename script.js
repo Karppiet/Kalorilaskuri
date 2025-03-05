@@ -10,6 +10,7 @@ function checkForm() {
     let wErr = document.querySelector("#weightErr");
     let hErr = document.querySelector("#heightErr");
     let aErr = document.querySelector("#ageErr");
+    let sErr = document.querySelector("#sErr")
    
   
     //alusteaan x
@@ -40,8 +41,10 @@ function checkForm() {
       x = false;
     }
   
-    if (sex == null) {
+    if (sex = null) {
       console.log("Sukupuoli pitää olla valittuna");
+      sErr.innerHTML = `<p style="color:red">Ikä pitää olla väliltä 1-120 vuotta</p>`
+
       x = false;
     }
   
