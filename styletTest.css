@@ -110,7 +110,7 @@ html, body {
      box-shadow: none;
 }
 
-.form-content textarea {
+/* .form-content textarea {
     position: static !important;
     width: 100%;
     padding: 8px 20px;
@@ -127,7 +127,7 @@ html, body {
     -webkit-transition: none;
     transition: none;
     margin-bottom: 14px;
-}
+} */
 
 .form-content textarea:hover, .form-content textarea:focus {
     border: 0;

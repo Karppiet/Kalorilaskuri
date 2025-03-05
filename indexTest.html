@@ -1,135 +1,172 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Kalorilaskuri</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <link rel="stylesheet" href="styletTest.css">
-</head>
-<div class="form-body">
-    <div class="row">
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="styletTest.css" />
+  </head>
+  <body>
+    <div class="form-body">
+      <div class="row">
         <div class="form-holder">
-            <div class="form-content">
-                <div class="form-items">
-                    <h3>Energiantarve</h3>
-                    <!-- <p>Fill in the data below.</p> -->
-                    <form class="requires-validation" novalidate>
-
-                        <div class="col-md-12">
-                           <input class="form-control" type="text" name="weight" placeholder="Paino"  id="weight">
-                           <span id="weightErr"></span>
-                        </div>
-
-                        <div class="col-md-12">
-                            <input class="form-control" type="text" name="height" id="height" placeholder="Pituus">
-                            <span id="heightErr"></span>
-                        </div>
-
-                        <div class="col-md-12">
-                            <input class="form-control" type="text" name="height" id="height" placeholder="Ikä">
-                            <span id="heightErr"></span>
-                        </div>
-
-                       <div class="col-md-12">
-                            <select class="form-select mt-3" required>
-                                  <option selected disabled value="">Aktiivisuus</option>
-                                    <option value="no">Ei aktiivinen</option>
-                                    <option value="some">Satunnaisesti liikkuva</option>
-                                    <option value="frequent">Säännöllisesti liikkuva</option>
-                                    <option value="active">Aktiivinen urheilija</option>
-                                    <option value="max">Raskaasti kuntoileva</option>
-                           </select>
-                       </div>
-
-
-                     
-
-
-                       <div class="col-md-12 mt-3">
-                        <label class="mb-3 mr-1" for="gender">Gender: </label>
-
-                        <input type="radio" class="btn-check" name="gender" id="male" autocomplete="off">
-                        <label class="btn btn-sm btn-outline-secondary" for="male">Mies</label>
-
-                        <input type="radio" class="btn-check" name="gender" id="female" autocomplete="off">
-                        <label class="btn btn-sm btn-outline-secondary" for="female">Nainen</label>
-
-                        <input type="radio" class="btn-check" name="gender" id="secret" autocomplete="off">
-                        
-            
-                        </div>
-
-                 
-              
-
-                        <div class="form-button mt-3">
-                            <button id="submit" type="submit" class="btn btn-primary">Lähetä</button>
-                        </div>
-                    </form>
-
-                    <form class="requires-validation" novalidate>
-
-                        <div class="col-md-12">
-                           <input class="form-control" type="text" name="weight" placeholder="Paino"  id="weight">
-                           <span id="weightErr"></span>
-                        </div>
-
-                        <div class="col-md-12">
-                            <input class="form-control" type="text" name="height" id="height" placeholder="Pituus">
-                            <span id="heightErr"></span>
-                        </div>
-
-                        <div class="col-md-12">
-                            <input class="form-control" type="text" name="height" id="height" placeholder="Ikä">
-                            <span id="heightErr"></span>
-                        </div>
-
-                       <div class="col-md-12">
-                            <select class="form-select mt-3" required>
-                                  <option selected disabled value="">Aktiivisuus</option>
-                                    <option value="no">Ei aktiivinen</option>
-                                    <option value="some">Satunnaisesti liikkuva</option>
-                                    <option value="frequent">Säännöllisesti liikkuva</option>
-                                    <option value="active">Aktiivinen urheilija</option>
-                                    <option value="max">Raskaasti kuntoileva</option>
-                           </select>
-                       </div>
-
-
-                     
-
-
-                       <div class="col-md-12 mt-3">
-                        <label class="mb-3 mr-1" for="gender">Gender: </label>
-
-                        <input type="radio" class="btn-check" name="gender" id="male" autocomplete="off">
-                        <label class="btn btn-sm btn-outline-secondary" for="male">Mies</label>
-
-                        <input type="radio" class="btn-check" name="gender" id="female" autocomplete="off">
-                        <label class="btn btn-sm btn-outline-secondary" for="female">Nainen</label>
-
-                        <input type="radio" class="btn-check" name="gender" id="secret" autocomplete="off">
-                        
-            
-                        </div>
-
-                 
-              
-
-                        <div class="form-button mt-3">
-                            <button id="submit" type="submit" class="btn btn-primary">Lähetä</button>
-                        </div>
-                    </form>
+          <div class="form-content">
+            <div class="form-items">
+              <h3>Energiantarve</h3>
+              <!-- <p>Fill in the data below.</p> -->
+              <form action="#" name="energyForm" onsubmit="checkForm();">
+                <div class="col-md-12">
+                  <input
+                    class="form-control"
+                    type="text"
+                    name="weight"
+                    placeholder="Paino"
+                    id="weight"
+                  />
+                  <span id="weightErr"></span>
                 </div>
+
+                <div class="col-md-12">
+                  <input
+                    class="form-control"
+                    type="text"
+                    name="height"
+                    id="height"
+                    placeholder="Pituus"
+                  />
+                  <span id="heightErr"></span>
+                </div>
+
+                <div class="col-md-12">
+                  <input
+                    class="form-control"
+                    type="text"
+                    name="aget"
+                    id="age"
+                    placeholder="Ikä"
+                  />
+                  <span id="ageErr"></span>
+                </div>
+
+                <div class="col-md-12">
+                  <select
+                    class="form-select mt-3"
+                    id="activity"
+                    name="activity"
+                  >
+                    <option selected disabled value="">Aktiivisuus</option>
+                    <option value="no">Ei aktiivinen</option>
+                    <option value="some">Satunnaisesti liikkuva</option>
+                    <option value="frequent">Säännöllisesti liikkuva</option>
+                    <option value="active">Aktiivinen urheilija</option>
+                    <option value="max">Raskaasti kuntoileva</option>
+                  </select>
+                </div>
+
+                <div class="col-md-12 mt-3">
+                  <label class="mb-3 mr-1" for="sex">Sukupuoli </label>
+
+                  <input
+                    type="radio"
+                    class="btn-check"
+                    name="sex"
+                    id="man"
+                    autocomplete="off"
+                  />
+                  <label class="btn btn-sm btn-outline-secondary" for="man"
+                    >Mies</label
+                  >
+
+                  <input
+                    type="radio"
+                    class="btn-check"
+                    name="sex"
+                    id="woman"
+                    autocomplete="off"
+                  />
+                  <label class="btn btn-sm btn-outline-secondary" for="woman"
+                    >Nainen</label
+                  >
+
+                  <input
+                    type="radio"
+                    class="btn-check"
+                    name="gender"
+                    id="secret"
+                    autocomplete="off"
+                  />
+                </div>
+
+                <div class="form-button mt-3">
+                  <button id="submit" type="submit" class="btn btn-primary">
+                    Lähetä
+                  </button>
+                </div>
+                <br />
+                <div id="results"></div>
+              </form>
+              <br />
+
+              <form action="#" name="energyForm2" onsubmit="checkForm2();">
+                <h3>Energiansaanti</h3>
+                <div class="col-md-12">
+                  <div class="col-md-12">
+                    <select class="form-select mt-3" id="day" name="day">
+                      <option selected disabled value="">Päivä</option>
+                      <option value="mo">Maanantai</option>
+                      <option value="tu">Tiistai</option>
+                      <option value="we">Keskiviikko</option>
+                      <option value="th">Torstai</option>
+                      <option value="fr">Perjantai</option>
+                      <option value="sa">Lauantai</option>
+                      <option value="su">Sunnuntai</option>
+                    </select>
+                    <span id="weightErr"></span>
+                  </div>
+
+                  <div class="col-md-12">
+                    <select class="form-select mt-3" id="eating" name="eating">
+                      <option selected disabled value="">Ateria</option>
+                      <option value="br">Aamiainen</option>
+                      <option value="lu">Lounas</option>
+                      <option value="di">Päivällinen</option>
+                      <option value="su">Illallinen</option>
+                      <option value="ev">Iltapala</option>
+                      <option value="sn">Välipala</option>
+                    </select>
+                  </div>
+
+                  <input
+                    class="form-control"
+                    type="text"
+                    name="kcal"
+                    placeholder="Kalorit"
+                    id="kcal"
+                  />
+                  <br /><span id="calErr"></span><br />
+                </div>
+
+                <div class="form-button mt-3">
+                  <button id="submit" type="submit" class="btn btn-primary">
+                    Lähetä
+                  </button>
+                </div>
+                <br />
+                <div id="tablearea"></div>
+
+                <div id="energyResults"></div>
+              </form>
             </div>
+          </div>
         </div>
+      </div>
     </div>
-</div>
-
-
-    
-
-    
-</body>
+    <script src="scriptTest.js"></script>
+  </body>
 </html>
