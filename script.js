@@ -6,12 +6,13 @@ function checkForm() {
     let height = document.querySelector("#height");
     let age = document.querySelector("#age");
     let sex = document.querySelector("input[type='radio'][name=sex]:checked");
+    let activity  = document.querySelector("#activity");
   
     let wErr = document.querySelector("#weightErr");
     let hErr = document.querySelector("#heightErr");
     let aErr = document.querySelector("#ageErr");
-    let sErr = document.querySelector("#sErr")
-   
+    let sErr = document.querySelector("#sErr");
+    let acErr = document.querySelector("#actError")
   
     //alusteaan x
     let x = true;
@@ -41,9 +42,16 @@ function checkForm() {
       x = false;
     }
   
-    if (sex = null) {
+    if (sex == null) {
       console.log("Sukupuoli pitää olla valittuna");
-      sErr.innerHTML = `<p style="color:red">Ikä pitää olla väliltä 1-120 vuotta</p>`
+      sErr.innerHTML = `<p style="color:red">Sukupuoli pitää olla valittuna</p>`
+
+      x = false;
+    }
+
+    if(activity.value == ""){
+      console.log("Aktiivisuus pitää olla valittuna");
+      acErr.innerHTML = `<p style="color:red">Aktiivisuus pitää olla valittuna</p>`
 
       x = false;
     }
@@ -56,6 +64,8 @@ function checkForm() {
       wErr.innerHTML = "";
       hErr.innerHTML = "";
       aErr.innerHTML = "";
+      sErr.innerHTML = "";
+      acErr.innerHTML = "";
   
       weight.style.borderColor = "";
       height.style.borderColor = "";
