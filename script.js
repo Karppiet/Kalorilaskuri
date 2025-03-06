@@ -24,6 +24,9 @@ function checkForm() {
       wErr.innerHTML = `<p style="color:red">Painon pitää olla väliltä 40-199kg</p>`;
   
       x = false;
+    }else{
+      weight.style.border= "";
+      wErr.innerHTML = "";
     }
   
     if (height.value < 80 || height.value > 240 || isNaN(height.value) == true) {
@@ -32,6 +35,9 @@ function checkForm() {
       hErr.innerHTML = `<p style="color:red">Pituus pitää olla väliltä 80-240cm</p>`
   
       x = false;
+    }else{
+      height.style.border= "";
+      hErr.innerHTML = "";
     }
   
     if (age.value < 1 || age.value > 120 || isNaN(age.value) == true) {
@@ -40,14 +46,21 @@ function checkForm() {
       aErr.innerHTML = `<p style="color:red">Ikä pitää olla väliltä 1-120 vuotta</p>`
   
       x = false;
+    }else{
+      age.style.border= "";
+      aErr.innerHTML = "";
     }
+  
   
     if (sex == null) {
       console.log("Sukupuoli pitää olla valittuna");
       sErr.innerHTML = `<p style="color:red">Sukupuoli pitää olla valittuna</p>`
 
       x = false;
+    }else{
+      hErr.innerHTML = "";
     }
+  
 
     if(activity.value == ""){      
       console.log("Aktiivisuus pitää olla valittuna");
@@ -56,7 +69,12 @@ function checkForm() {
       
 
       x = false;
+    }else{
+      height.style.border= "";
+      activity.style.outline = "";
+      acErr.innerHTML = "";
     }
+  
   
     console.log(x);
   
@@ -151,6 +169,9 @@ function checkForm() {
       dErr.innerHTML =`<p style="color:red">Päivä pitää olla valittuna</p>`
       x = false;
 
+    }else{
+      day.style.outline = "";
+      dErr.innerHTML = "";
     }
 
     if( meal.value == ""){
@@ -160,6 +181,9 @@ function checkForm() {
       mErr.innerHTML =`<p style="color:red">Ateria pitää olla valittuna</p>`
       x = false;
 
+    }else{
+      meal.style.outline = "";
+      mErr.innerHTML ="";
     }
   
     // tsekataan syötetty määärä kaloreita ja muutetaan x falseksi jos luvut eivät täsmää
@@ -168,6 +192,10 @@ function checkForm() {
       kcal.style.border = "3px solid red";
       cErr.innerHTML =`<p style="color:red">Kalorit pitää olla väliltä 1-3000 kcal</p>`
       x = false;
+    }else{
+      kcal.style.border = "";
+      cErr.innerHTML = "";
+
     }
   
     // jos x jää true arvolle ajetaan calculateIntake funktio sekä tyhjennetään virheilmoitukset
