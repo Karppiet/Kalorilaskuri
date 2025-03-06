@@ -58,7 +58,7 @@ function checkForm() {
 
       x = false;
     }else{
-      hErr.innerHTML = "";
+      sErr.innerHTML = "";
     }
   
 
