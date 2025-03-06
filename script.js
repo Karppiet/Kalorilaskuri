@@ -66,7 +66,6 @@ function checkForm() {
       console.log("Aktiivisuus pitää olla valittuna");
       activity.style.outline = "3px solid red";
       acErr.innerHTML = `<p style="color:red">Aktiivisuus pitää olla valittuna</p>`
-      
 
       x = false;
     }else{
