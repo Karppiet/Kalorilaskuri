@@ -72,7 +72,7 @@ function checkForm() {
       weight.style.border= "";
       height.style.border = "";
       age.style.border = "";
-      activity.style.border = "";
+      activity.style.outline = "";
     //   cal.style.borderColor = "";
       
     } else {
@@ -137,13 +137,35 @@ function checkForm() {
     // alustetaan x
     let x = true;
     // asetetaan muuttujaan oikea kenttä
+    let day = document.querySelector("#day");
+    let meal = document.querySelector("#eating");
     let kcal = document.querySelector("#kcal");
     let cErr = document.querySelector("#calErr");
+    let dErr = document.querySelector("#dayErr");
+    let mErr = document.querySelector("#mealErr");
+
+    if( day.value == ""){
+      console.log("Päivä pitää olla valittuna");
+
+      day.style.outline = "3px solid red";
+      dErr.innerHTML =`<p style="color:red">Päivä pitää olla valittuna</p>`
+      x = false;
+
+    }
+
+    if( meal.value == ""){
+      console.log("Ateria pitää olla valittuna");
+
+      meal.style.outline = "3px solid red";
+      mErr.innerHTML =`<p style="color:red">Ateria pitää olla valittuna</p>`
+      x = false;
+
+    }
   
     // tsekataan syötetty määärä kaloreita ja muutetaan x falseksi jos luvut eivät täsmää
     if (kcal.value < 1 || kcal.value > 3000 || isNaN(kcal.value) == true) {
-      console.log("Kalorit pitää olla väliltä 1-3000");
-      kcal.style.borderColor = "red";
+        
+      kcal.style.border = "3px solid red";
       cErr.innerHTML =`<p style="color:red">Kalorit pitää olla väliltä 1-3000 kcal</p>`
       x = false;
     }
@@ -151,8 +173,15 @@ function checkForm() {
     // jos x jää true arvolle ajetaan calculateIntake funktio sekä tyhjennetään virheilmoitukset
     if (x == true) {
       calculateIntake();
-      kcal.style.borderColor = "";
+      
+      day.style.outline = "";
+      meal.style.outline = "";
+      kcal.style.border = "";
+      kcal.value = "";
+      
       cErr.innerHTML = "";
+      dErr.innerHTML = "";
+      mErr.innerHTML = "";
   
     } else {
       console.log("täytä oikeat arvot");
