@@ -20,7 +20,7 @@ function checkForm() {
     // tsekataan kenttien arvot, jos eivät sovi annettuihin vaatimuksiin annetaan virheilmoitus
     if (weight.value < 40 || weight.value > 199 || isNaN(weight.value) == true) {
       console.log("Painon pitää olla väliltä 40-199kg");
-      weight.style.borderColor = "red";
+      weight.style.border = "3px solid red";
       wErr.innerHTML = `<p style="color:red">Painon pitää olla väliltä 40-199kg</p>`;
   
       x = false;
@@ -28,7 +28,7 @@ function checkForm() {
   
     if (height.value < 80 || height.value > 240 || isNaN(height.value) == true) {
       console.log("Pituus pitää olla välillä 80-240cm");
-      height.style.borderColor = "red";
+      height.style.border = "3px solid red";
       hErr.innerHTML = `<p style="color:red">Pituus pitää olla väliltä 80-240cm</p>`
   
       x = false;
@@ -36,7 +36,7 @@ function checkForm() {
   
     if (age.value < 1 || age.value > 120 || isNaN(age.value) == true) {
       console.log("Ikä pitää olla välillä 1-120");
-      age.style.borderColor = "red";
+      age.style.border = "3px solid red";
       aErr.innerHTML = `<p style="color:red">Ikä pitää olla väliltä 1-120 vuotta</p>`
   
       x = false;
@@ -49,9 +49,11 @@ function checkForm() {
       x = false;
     }
 
-    if(activity.value == ""){
+    if(activity.value == ""){      
       console.log("Aktiivisuus pitää olla valittuna");
+      activity.style.outline = "3px solid red";
       acErr.innerHTML = `<p style="color:red">Aktiivisuus pitää olla valittuna</p>`
+      
 
       x = false;
     }
@@ -67,9 +69,10 @@ function checkForm() {
       sErr.innerHTML = "";
       acErr.innerHTML = "";
   
-      weight.style.borderColor = "";
-      height.style.borderColor = "";
-      age.style.borderColor = "";
+      weight.style.border= "";
+      height.style.border = "";
+      age.style.border = "";
+      activity.style.border = "";
     //   cal.style.borderColor = "";
       
     } else {
