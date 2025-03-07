@@ -23,7 +23,8 @@ kalorintarve sekä kirjata päivittäisten aterioiden kalorimääriä.
 
 ## Kuvat
 
-![image](https://github.com/user-attachments/assets/05417d3d-7e09-41bd-9bbf-aa102b35dfe1)
+![image](https://github.com/user-attachments/assets/3aaccff5-a9d8-439d-9d55-7926ed775e0e)
+
 
 
 
