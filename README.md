@@ -38,4 +38,4 @@ ChatGptä olen käyttänyt umpikujissa virheiden etsimiseen javascript koodista.
 
 ## Lisenssi
 
-The Unlicense @ [LICENSE](LICENSE)
+MIT license @ [LICENSE](LICENSE)
