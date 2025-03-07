@@ -32,7 +32,7 @@ Sovelluksessa on käyttety Html, Css, Bootstrap sekä Javascript teknologioita.
 Sovellus ajetaan selaimessa osoitteessa: https://kalorilaskuri.netlify.app/
 
 ## Lähteet
-Olen käyttänyt sovelluksen bootsrap ja css määritelmissä seuraavaa materiaalia https://codepen.io/samnorton/pen/oNYajYM.
+Olen käyttänyt sovelluksen bootstrap ja css määritelmissä seuraavaa materiaalia https://codepen.io/samnorton/pen/oNYajYM.
 Javascriptin ongelmatilanteissa olen käyttänyt https://stackoverflow.com sivustoa apuna.
 ChatGptä olen käyttänyt umpikujissa virheiden etsimiseen javascript koodista.
 
