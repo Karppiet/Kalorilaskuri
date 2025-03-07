@@ -18,7 +18,8 @@ https://kalorilaskuri.netlify.app/
 
 ## Sovelluksesta
 Kalorilaskuri on sovellus, jonka avulla voidaan laskea henkilön päivittäinen 
-kalorintarve sekä kirjata päivittäisten aterioiden kalorimääriä.
+kalorintarve sekä kirjata päivittäisten aterioiden kalorimääriä. Lomakkeeseen täytetään tarvittavat tiedot ja painetaan lähetä jonka jälkeen 
+kalorimäärät ja muut tiedot tulostuvat lomakkeen alle.
 
 ## Kuvat
 
