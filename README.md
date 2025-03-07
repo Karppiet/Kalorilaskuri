@@ -12,7 +12,6 @@ https://kalorilaskuri.netlify.app/
 - [Kuvat](#screenshots)
 - [Teknologiat](#technologies)
 - [Asennus](#setup)
-- [Approach](#approach)
 - [Status](#status)
 - [Lähteet](#credits)
 - [Lisenssi](#license)
