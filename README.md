@@ -23,7 +23,8 @@ kalorintarve sekä kirjata päivittäisten aterioiden kalorimääriä.
 
 ## Kuvat
 
-![image](https://github.com/user-attachments/assets/f99468fb-26fd-415d-976c-59bee199ec6c)
+![image](https://github.com/user-attachments/assets/00c769aa-4e79-417f-9045-61d725a0378f)
+
 
 ## Teknologiat
 Sovelluksessa on käyttety Html, Css, Bootstrap sekä Javascript teknologioita.
