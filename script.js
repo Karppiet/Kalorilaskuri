@@ -129,7 +129,7 @@ function calculateEnergy() {
     } else if (activity == "max") {
       results.innerHTML = `<h3>${Math.round(2.2 * wresult)} kcal/päivä</h3>`;
     }
-  } else if ((sex = "man")) {
+  } else if (sex == "man") {
     if (activity == "no") {
       results.innerHTML = `<h3>${Math.round(1.3 * mresult)} kcal/päivä</h3>`;
     } else if (activity == "some") {
@@ -241,6 +241,7 @@ function calculateIntake() {
   for (let i = 0; i < storedData.length; i++) {
     console.log(storedData[i].day);
   }
+
 
 
   energySum();
