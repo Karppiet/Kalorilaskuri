@@ -36,7 +36,6 @@ Olen käyttänyt sovelluksen bootsrap ja css määritelmissä seuraavaa materiaa
 Javascriptin ongelmatilanteissa olen käyttänyt https://stackoverflow.com sivustoa apuna.
 ChatGptä olen käyttänyt umpikujissa virheiden etsimiseen javascript koodista.
 
-## License
-Choose a license for your project by following this [guide](https://docs.github.com/en/communities/setting-up-your-project-for-healthy-contributions/adding-a-license-to-a-repository).
+## Lisenssi
 
-Example: MIT license @ [author](author.com)
+Example: The Unlicense @ [LICENSE](author.com)
