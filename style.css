@@ -110,24 +110,6 @@ html, body {
      box-shadow: none;
 }
 
-/* .form-content textarea {
-    position: static !important;
-    width: 100%;
-    padding: 8px 20px;
-    border-radius: 6px;
-    text-align: left;
-    background-color: #fff;
-    border: 0;
-    font-size: 15px;
-    font-weight: 300;
-    color: #8D8D8D;
-    outline: none;
-    resize: none;
-    height: 120px;
-    -webkit-transition: none;
-    transition: none;
-    margin-bottom: 14px;
-} */
 
 .form-content textarea:hover, .form-content textarea:focus {
     border: 0;
@@ -140,10 +122,3 @@ html, body {
     margin-bottom: 8px !important;
 }
 
-/* .invalid-feedback{
-    color: #ff606e;
-}
-
-.valid-feedback{
-   color: #2acc80;
-} */
