@@ -8,9 +8,9 @@ https://kalorilaskuri.netlify.app/
 
 ## Sisällys
 
-- [About The App](#about-the-app)
-- [Screenshots](#screenshots)
-- [Technologies](#technologies)
+- [Sovelluksesta](#about-the-app)
+- [Kuvat](#screenshots)
+- [Teknologiat](#technologies)
 - [Setup](#setup)
 - [Approach](#approach)
 - [Status](#status)
@@ -25,7 +25,7 @@ kalorintarve sekä kirjata päivittäisten aterioiden kalorimääriä.
 
 ![image](https://github.com/user-attachments/assets/f99468fb-26fd-415d-976c-59bee199ec6c)
 
-## Technologies
+## Teknologiat
 Sovelluksessa on käyttety Html, Css, Bootstrap sekä Javascript teknologioita.
 
 ## Setup
