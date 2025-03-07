@@ -31,7 +31,7 @@ kalorintarve sekä kirjata päivittäisten aterioiden kalorimääriä.
 Sovelluksessa on käyttety Html, Css, Bootstrap sekä Javascript teknologioita.
 
 ## Asennus
-Sovellus ajetaan selaimessa osoitteessa: https://kalorilaskuri.netlify.app/
+Sovellus toimii selaimessa osoitteessa: https://kalorilaskuri.netlify.app/
 
 ## Lähteet
 Olen käyttänyt sovelluksen bootstrap ja css määritelmissä seuraavaa materiaalia https://codepen.io/samnorton/pen/oNYajYM.
