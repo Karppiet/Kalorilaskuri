@@ -299,7 +299,7 @@ function createTable() {
   table.appendChild(tbody);
   //tyhjätään taulukko duplikaattien muodostumisen varalle
   tablearea.innerHTML = "";
-  // liitetään taulukko taulukko tablearea
+  // liitetään taulukko tableareaan lapsielementtinä
   tablearea.appendChild(table);
 }
 
