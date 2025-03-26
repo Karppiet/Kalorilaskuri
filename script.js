@@ -67,7 +67,7 @@ function checkForm() {
     activity.style.outline = "3px solid red";
     acErr.innerHTML = `<p style="color:red">Aktiivisuus pitää olla valittuna</p>`;
 
-    x = false; // estetään lomakkeen uudelleenlataus
+    x = false; 
   } else {
     height.style.border = "";
     activity.style.outline = "";
